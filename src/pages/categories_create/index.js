@@ -4,21 +4,19 @@ import api from "../../services/api";
 import VerifyLogin from "../../components/VerifyLogin";
 
 const UsersCreate = () => {
-  async function createUser(e) {
+  async function createCategory(e) {
     e.preventDefault();
 
     let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
+    let description = document.getElementById("description").value;
 
     await api
-      .post(`/user/create`, {
+      .post(`/category/create`, {
         name: name,
-        email: email,
-        password: password,
+        description: description,
       })
       .then((res) => {
-        window.location.href = "/control-panel/users";
+        window.location.href = "/control-panel/categories";
       })
       .catch((err) => {
         document.getElementById("error").style.display = "block";
@@ -28,17 +26,13 @@ const UsersCreate = () => {
     <>
       <VerifyLogin />
 
-      <form onSubmit={createUser}>
+      <form onSubmit={createCategory}>
         <input type="text" placeholder="Nome" id="name" required />
-        <input type="email" placeholder="E-mail" id="email" required />
-        <input type="password" placeholder="Senha" id="password" required />
+        <input type="text" placeholder="Descrição" id="description" required />
         <button type="submit">Criar</button>
       </form>
 
-      <p id="error">
-        Não foi possível criar um usuário. Pode ser que já existe um usuário com
-        esse e-mail, tente novamente.
-      </p>
+      <p id="error">Não foi possível criar uma categoria, tente novamente.</p>
     </>
   );
 };
