@@ -21,8 +21,8 @@ const Users = () => {
                 <td class="name">${i.name}</td>
                 <td class="email">${i.email}</td>
                 <td class="password">${i.password}</td>
-                <td class="edit"><a href="control-panel/users/edit/${i.id}">I</a></td>
-                <td class="delete"><a href="control-panel/users/delete/${i.id}">X</a></td>
+                <td class="edit"><a href="/control-panel/users/edit/${i.id}">I</a></td>
+                <td class="delete"><a href="/control-panel/users/delete/${i.id}">X</a></td>
               </tr>
           `;
         }

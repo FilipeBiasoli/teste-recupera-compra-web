@@ -20,8 +20,8 @@ const Categories = () => {
               <tr>
                 <td class="name">${i.name}</td>
                 <td class="description">${i.description}</td>
-                <td class="edit"><a href="control-panel/categories/edit/${i.id}">I</a></td>
-                <td class="delete"><a href="control-panel/categories/delete/${i.id}">X</a></td>
+                <td class="edit"><a href="/control-panel/categories/edit/${i.id}">I</a></td>
+                <td class="delete"><a href="/control-panel/categories/delete/${i.id}">X</a></td>
               </tr>
           `;
         }
