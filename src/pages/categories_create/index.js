@@ -32,11 +32,18 @@ const UsersCreate = () => {
           <i class="fas fa-arrow-left"></i> Voltar
         </Link>
 
-        <input type="text" placeholder="Nome" id="name" required />
+        <input
+          type="text"
+          placeholder="Nome"
+          id="name"
+          maxlength="35"
+          required
+        />
         <textarea
           type="text"
           placeholder="Descrição"
           id="description"
+          maxlength="150"
           required
         />
         <button type="submit">Criar categoria</button>

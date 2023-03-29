@@ -34,9 +34,27 @@ const UsersCreate = () => {
           <i class="fas fa-arrow-left"></i> Voltar
         </Link>
 
-        <input type="text" placeholder="Nome" id="name" required />
-        <input type="email" placeholder="E-mail" id="email" required />
-        <input type="text" placeholder="Senha" id="password" required />
+        <input
+          type="text"
+          placeholder="Nome"
+          id="name"
+          maxlength="35"
+          required
+        />
+        <input
+          type="email"
+          placeholder="E-mail"
+          id="email"
+          maxlength="255"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Senha"
+          id="password"
+          maxlength="30"
+          required
+        />
         <button type="submit">Criar usuário</button>
       </form>
 

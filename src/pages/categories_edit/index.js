@@ -2,7 +2,7 @@ import React from "react";
 import "./style.scss";
 import api from "../../services/api";
 import VerifyLogin from "../../components/VerifyLogin";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const UsersEdit = () => {
   const { id_category } = useParams();
@@ -33,17 +33,35 @@ const UsersEdit = () => {
       });
   }
   return (
-    <>
+    <div id="main_div">
       <VerifyLogin />
 
       <form onSubmit={createCategory}>
-        <input type="text" placeholder="Nome" id="name" required />
-        <input type="text" placeholder="Descrição" id="description" required />
-        <button type="submit">Editar</button>
+        <Link class="btn_voltar" to="/control-panel/categories">
+          <i class="fas fa-arrow-left"></i> Voltar
+        </Link>
+
+        <input
+          type="text"
+          placeholder="Nome"
+          id="name"
+          maxlength="35"
+          required
+        />
+        <textarea
+          type="text"
+          placeholder="Descrição"
+          id="description"
+          maxlength="150"
+          required
+        />
+        <button type="submit">Editar categoria</button>
       </form>
 
-      <p id="error">Não foi possível editar a categoria, tente novamente.</p>
-    </>
+      <p id="error_login">
+        Não foi possível editar a categoria, tente novamente.
+      </p>
+    </div>
   );
 };
 

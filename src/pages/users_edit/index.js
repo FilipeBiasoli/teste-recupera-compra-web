@@ -2,7 +2,7 @@ import React from "react";
 import "./style.scss";
 import api from "../../services/api";
 import VerifyLogin from "../../components/VerifyLogin";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const UsersCreate = () => {
   const { id_user } = useParams();
@@ -36,21 +36,43 @@ const UsersCreate = () => {
       });
   }
   return (
-    <>
+    <div id="main_div">
       <VerifyLogin />
 
       <form onSubmit={createUser}>
-        <input type="text" placeholder="Nome" id="name" required />
-        <input type="email" placeholder="E-mail" id="email" required />
-        <input type="text" placeholder="Senha" id="password" required />
-        <button type="submit">Editar</button>
+        <Link class="btn_voltar" to="/control-panel/users">
+          <i class="fas fa-arrow-left"></i> Voltar
+        </Link>
+
+        <input
+          type="text"
+          placeholder="Nome"
+          id="name"
+          maxlength="35"
+          required
+        />
+        <input
+          type="email"
+          placeholder="E-mail"
+          id="email"
+          maxlength="255"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Senha"
+          id="password"
+          maxlength="30"
+          required
+        />
+        <button type="submit">Editar usuário</button>
       </form>
 
-      <p id="error">
+      <p id="error_login">
         Não foi possível editar o usuário. Pode ser que já existe um usuário com
         esse e-mail, tente novamente.
       </p>
-    </>
+    </div>
   );
 };
 
