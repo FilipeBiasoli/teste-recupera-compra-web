@@ -21,8 +21,8 @@ const Users = () => {
                 <td class="name">${i.name}</td>
                 <td class="email">${i.email}</td>
                 <td class="password">${i.password}</td>
-                <td class="edit"><a href="/control-panel/users/edit/${i.id}">I</a></td>
-                <td class="delete"><a href="/control-panel/users/delete/${i.id}">X</a></td>
+                <td class="edit"><a href="/control-panel/users/edit/${i.id}"><i class="fas fa-edit"></i></a></td>
+                <td class="delete"><a href="/control-panel/users/delete/${i.id}"><i class="fas fa-trash-alt"></i></a></td>
               </tr>
           `;
         }
@@ -33,26 +33,35 @@ const Users = () => {
   })();
 
   return (
-    <>
+    <div id="main_div">
       <VerifyLogin />
 
-      <Link to="/control-panel/users/create">criar</Link>
+      <div class="table_div">
+        <div class="botoes">
+          <Link to="/control-panel">
+            <i class="fas fa-arrow-left"></i> Voltar
+          </Link>
+          <Link to="/control-panel/users/create">
+            Criar usuário <i class="fas fa-plus"></i>
+          </Link>
+        </div>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>E-mail</th>
-            <th>Senha</th>
-            <th>Editar</th>
-            <th>Excluir</th>
-          </tr>
-        </thead>
-        <tbody id="users_table">
-          <p>Carregando...</p>
-        </tbody>
-      </table>
-    </>
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>E-mail</th>
+              <th>Senha</th>
+              <th>Editar</th>
+              <th>Excluir</th>
+            </tr>
+          </thead>
+          <tbody id="users_table">
+            <p>Carregando...</p>
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 };
 

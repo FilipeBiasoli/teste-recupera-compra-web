@@ -47,4 +47,4 @@ npm start
 Acesse o painel de controle com as credenciais de teste a seguir:
 
 - **E-mail:** filipe.teste@gmail.com
-- **password:** 000000
+- **Senha:** 000000

@@ -30,8 +30,8 @@ const UsersCreate = () => {
       <VerifyLogin />
 
       <form onSubmit={createUser}>
-        <Link class="btn_voltar" to="/control-panel/categories">
-          &larr; Voltar
+        <Link class="btn_voltar" to="/control-panel/users">
+          <i class="fas fa-arrow-left"></i> Voltar
         </Link>
 
         <input type="text" placeholder="Nome" id="name" required />

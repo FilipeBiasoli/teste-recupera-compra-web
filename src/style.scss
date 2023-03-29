@@ -81,7 +81,7 @@ body {
     font-size: 14px;
   }
 
-  table {
+  .table_div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -90,5 +90,73 @@ body {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 50px;
     border-radius: 30px;
+    width: 720px;
+
+    .botoes {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      a {
+        text-align: left;
+        width: fit-content;
+        font-size: 12px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+    }
+
+    table {
+      border-collapse: collapse;
+      border-radius: 8px;
+      border: 1px solid #000;
+
+      th,
+      td {
+        border: 1px solid #000;
+        padding: 5px 15px;
+        text-align: left;
+      }
+
+      td.delete {
+        text-align: center;
+        a {
+          width: 100%;
+          height: 100%;
+          display: block;
+          color: red;
+          text-decoration: none;
+          font-weight: 700;
+
+          &:hover {
+            color: #a52a2a;
+          }
+        }
+      }
+
+      td.edit {
+        text-align: center;
+        a {
+          width: 100%;
+          height: 100%;
+          display: block;
+          color: #008000;
+          text-decoration: none;
+          font-weight: 700;
+
+          &:hover {
+            color: #006400;
+          }
+        }
+      }
+
+      td.description {
+        max-width: 400px;
+      }
+
+      thead {
+        background-color: #c4c4c4;
+      }
+    }
   }
 }

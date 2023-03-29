@@ -17,13 +17,13 @@ const Categories = () => {
           category_list =
             category_list +
             `
-              <tr>
-                <td class="name">${i.name}</td>
-                <td class="description">${i.description}</td>
-                <td class="edit"><a href="/control-panel/categories/edit/${i.id}">I</a></td>
-                <td class="delete"><a href="/control-panel/categories/delete/${i.id}">X</a></td>
-              </tr>
-          `;
+                <tr>
+                  <td class="name">${i.name}</td>
+                  <td class="description">${i.description}</td>
+                  <td class="edit"><a href="/control-panel/categories/edit/${i.id}"><i class="fas fa-edit"></i></a></td>
+                  <td class="delete"><a href="/control-panel/categories/delete/${i.id}"><i class="fas fa-trash-alt"></i></a></td>
+                </tr>
+            `;
         }
 
         document.getElementById("categories_table").innerHTML = category_list;
@@ -32,25 +32,33 @@ const Categories = () => {
   })();
 
   return (
-    <>
+    <div id="main_div">
       <VerifyLogin />
 
-      <Link to="/control-panel/categories/create">criar</Link>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>Descrição</th>
-            <th>Editar</th>
-            <th>Excluir</th>
-          </tr>
-        </thead>
-        <tbody id="categories_table">
-          <p>Carregando...</p>
-        </tbody>
-      </table>
-    </>
+      <div class="table_div">
+        <div class="botoes">
+          <Link to="/control-panel">
+            <i class="fas fa-arrow-left"></i> Voltar
+          </Link>
+          <Link to="/control-panel/categories/create">
+            Criar categoria <i class="fas fa-plus"></i>
+          </Link>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Descrição</th>
+              <th>Editar</th>
+              <th>Excluir</th>
+            </tr>
+          </thead>
+          <tbody id="categories_table">
+            <p>Carregando...</p>
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 };
 

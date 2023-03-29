@@ -29,7 +29,7 @@ const UsersCreate = () => {
 
       <form onSubmit={createCategory}>
         <Link class="btn_voltar" to="/control-panel/categories">
-          &larr; Voltar
+          <i class="fas fa-arrow-left"></i> Voltar
         </Link>
 
         <input type="text" placeholder="Nome" id="name" required />
