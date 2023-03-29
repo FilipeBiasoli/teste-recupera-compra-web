@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 // pages
 import Login from "./pages/login/index";
 import Home from "./pages/home/index";
+import Users from "./pages/users/index";
+import Categories from "./pages/categories/index";
 
 export default function App() {
   return (
@@ -11,6 +13,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/control-panel" element={<Home />} />
+        <Route path="/control-panel/users" element={<Users />} />
+        <Route path="/control-panel/categories" element={<Categories />} />
       </Routes>
     </BrowserRouter>
   );

@@ -13,8 +13,10 @@ const Login = () => {
       .get(`/user/get_email/${email}`)
       .then((res) => {
         if (res.data.password !== password || res.data == null) {
+          localStorage.setItem("login", false);
           document.getElementById("error_login").style.display = "block";
         } else {
+          localStorage.setItem("login", true);
           window.location.href = "/control-panel";
         }
       })
