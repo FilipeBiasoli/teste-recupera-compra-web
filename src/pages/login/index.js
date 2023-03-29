@@ -26,7 +26,7 @@ const Login = () => {
   }
 
   return (
-    <>
+    <div id="main_div">
       <form onSubmit={userLogin}>
         <input type="email" placeholder="E-mail" id="email" required />
         <input type="password" placeholder="Senha" id="password" />
@@ -34,7 +34,7 @@ const Login = () => {
       </form>
 
       <div id="error_login">Usuário ou senha incorretos, tente novamente</div>
-    </>
+    </div>
   );
 };
 

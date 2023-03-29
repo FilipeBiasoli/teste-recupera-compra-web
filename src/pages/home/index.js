@@ -7,9 +7,13 @@ const Home = () => {
   return (
     <>
       <VerifyLogin />
-      <Link to="/control-panel/users">usuários</Link>
-      <br />
-      <Link to="/control-panel/categories">categorias</Link>
+
+      <div id="main_div">
+        <div class="selecione">
+          <Link to="/control-panel/users">usuários</Link>
+          <Link to="/control-panel/categories">categorias</Link>
+        </div>
+      </div>
     </>
   );
 };
